@@ -14,6 +14,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+
+@CrossOrigin(origins = "https://whlsecentralsup--temp2.sandbox.lightning.force.com")
 @RestController
 @RequestMapping("/api")
 public class MessageController {
