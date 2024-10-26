@@ -10,7 +10,7 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-                .allowedOrigins("*")  // In production, replace with specific Salesforce domains
+                .allowedOrigins("https://wise-hawk-hdi2dp-dev-ed.trailblaze.lightning.force.com" , "https://sse-pub-sub-8edc987ae02d.herokuapp.com")  // In production, replace with specific Salesforce domains
                 .allowedMethods("GET", "POST", "OPTIONS")
                 .allowedHeaders("*")
                 .allowCredentials(false)
