@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Map;
 
 
-@CrossOrigin(origins = "https://whlsecentralsup--temp2.sandbox.lightning.force.com")
+@CrossOrigin(origins = "https://wise-hawk-hdi2dp-dev-ed.trailblaze.lightning.force.com")
 @RestController
 @RequestMapping("/api")
 public class MessageController {
@@ -26,6 +26,7 @@ public class MessageController {
         this.emitterService = emitterService;
     }
 
+    @CrossOrigin(origins = "https://wise-hawk-hdi2dp-dev-ed.trailblaze.lightning.force.com")
     @PostMapping("/register")
     public ResponseEntity<String> registerClient(@RequestParam String userId) {
         logger.debug("Registering client: {}", userId);
@@ -33,12 +34,14 @@ public class MessageController {
         return ResponseEntity.ok(userId);
     }
 
+    @CrossOrigin(origins = "https://wise-hawk-hdi2dp-dev-ed.trailblaze.lightning.force.com")
     @GetMapping("/stream")
     public SseEmitter streamMessages(@RequestParam String userId) {
         logger.debug("Starting stream for client: {}", userId);
         return emitterService.createEmitter(userId);
     }
 
+    @CrossOrigin(origins = "https://wise-hawk-hdi2dp-dev-ed.trailblaze.lightning.force.com")
     @PostMapping("/broadcast")
     public ResponseEntity<Map<String, Object>> broadcastMessage(@RequestBody Message message) {
         logger.debug("Broadcasting message: {}", message);
